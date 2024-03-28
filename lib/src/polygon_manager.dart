@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_polygon/src/polygon_bean.dart';
+import 'package:fl_polygon/src/polygon_bean.dart';
 
 class PolygonManager {
   factory PolygonManager() => _instance;

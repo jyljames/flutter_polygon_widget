@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_polygon/flutter_polygon.dart';
-import 'package:flutter_polygon/widget/polygon_painter.dart';
+import 'package:fl_polygon/flutter_polygon.dart';
+import 'package:fl_polygon/widget/polygon_painter.dart';
 
 import '../src/polygon_bean.dart';
 import '../src/polygon_manager.dart';
