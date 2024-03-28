@@ -36,8 +36,8 @@ class Polygon extends StatefulWidget {
   final GestureDragDownCallback? onPanDown;
   final GestureDragEndCallback? onPanEnd;
 
-  final double? screenWidth;
-  final double? screenHeight;
+  final double? containerWidth;
+  final double? containerHeight;
 
   final Widget? child;
 
@@ -51,8 +51,8 @@ class Polygon extends StatefulWidget {
     this.onPanUpdate,
     this.onPanDown,
     this.onPanEnd,
-    this.screenWidth,
-    this.screenHeight,
+    this.containerWidth,
+    this.containerHeight,
     this.child,
   });
 
@@ -63,8 +63,8 @@ class Polygon extends StatefulWidget {
 class _PolygonState extends State<Polygon> {
   final List<Point> _polygonPoints = [];
   late PolygonBean _polygon;
-  late double _screenWidth;
-  late double _screenHeight;
+  late double _containerWidth;
+  late double _containerHeight;
 
   PanWay _panWay = PanWay.outsidePolygon;
 
@@ -79,8 +79,8 @@ class _PolygonState extends State<Polygon> {
 
   @override
   Widget build(BuildContext context) {
-    _screenWidth = widget.screenWidth ?? MediaQuery.of(context).size.width;
-    _screenHeight = widget.screenHeight ?? MediaQuery.of(context).size.height;
+    _containerWidth = widget.containerWidth ?? MediaQuery.of(context).size.width;
+    _containerHeight = widget.containerHeight ?? MediaQuery.of(context).size.height;
     return GestureDetector(
       onPanUpdate: (details) {
         debugPrint('polygon now pan update.');
@@ -144,11 +144,11 @@ class _PolygonState extends State<Polygon> {
       if (polygon.polygonPoint[pointIndex].Y <= 0) {
         polygon.polygonPoint[pointIndex].Y = 0;
       }
-      if (polygon.polygonPoint[pointIndex].X >= _screenWidth) {
-        polygon.polygonPoint[pointIndex].X = _screenWidth;
+      if (polygon.polygonPoint[pointIndex].X >= _containerWidth) {
+        polygon.polygonPoint[pointIndex].X = _containerWidth;
       }
-      if (polygon.polygonPoint[pointIndex].Y >= _screenHeight) {
-        polygon.polygonPoint[pointIndex].Y = _screenHeight;
+      if (polygon.polygonPoint[pointIndex].Y >= _containerHeight) {
+        polygon.polygonPoint[pointIndex].Y = _containerHeight;
       }
     });
   }
@@ -164,11 +164,11 @@ class _PolygonState extends State<Polygon> {
         if (localPoint.Y <= 0) {
           localPoint.Y = 0;
         }
-        if (localPoint.X >= _screenWidth) {
-          localPoint.X = _screenWidth;
+        if (localPoint.X >= _containerWidth) {
+          localPoint.X = _containerWidth;
         }
-        if (localPoint.Y >= _screenHeight) {
-          localPoint.Y = _screenHeight;
+        if (localPoint.Y >= _containerHeight) {
+          localPoint.Y = _containerHeight;
         }
       }
     });
