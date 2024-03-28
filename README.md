@@ -5,7 +5,7 @@ A simple widget that can draw, change, and drag polygons(You can customize the c
 
 ## Demo
 
-![Demo](https://raw.githubusercontent.com/java-james/loading_overlay/master/loading_overlay.gif)
+![Demo](https://github.com/jyljames/flutter_polygon_widget/blob/main/petal_20240328_222027.gif)
 
 *See example for details*
 
